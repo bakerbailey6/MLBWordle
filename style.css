@@ -1,0 +1,29 @@
+.flex-container{
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 1em;
+}
+
+div{
+    padding: 1em;
+    text-align: center;
+}
+
+body{
+    background-color: darkgray;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
