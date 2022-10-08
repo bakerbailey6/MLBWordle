@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data () {
       return {
-        player: ['trout%25', 'mookie betts', 'clayton kershaw', 'acuna%25', 'aaron judge', 'jose altuve', 'bryce harper', 'wander franco', 'byron buxton', 'lance lynn', 'corey seager', 'joc pederson', 'max scherzer', 'luis castillo', 'nolan arenado'],
+        player: ['mike trout', 'mookie betts', 'clayton kershaw', 'ronald acuna jr.', 'aaron judge', 'jose altuve', 'bryce harper', 'wander franco', 'byron buxton', 'lance lynn', 'corey seager', 'joc pederson', 'max scherzer', 'luis castillo', 'nolan arenado'],
         league: {
           'NL': {
             'NL_west': {
@@ -302,9 +302,9 @@ new Vue({
             this.guess_data = response.data.search_player_all.queryResults;
             if(this.guess_data.totalSize === '1'){
               this.show.push(this.guess)
-              this.count++}})
-        .catch(error => console.log(error))
-        this.guess = "";       
+              this.count++}
+              this.guess =''})
+        .catch(error => console.log(error))      
       },
 
       checkValues(){
@@ -472,9 +472,9 @@ new Vue({
           this.check_position = 0
         }
 
-        this.player_data = [this.guess_data.row.name_display_first_last, this.guess_data.row.team_full, this.division, this.guess_data.row.bats, this.guess_data.row.bats, this.guess_data.row.birth_country, this.guess_data.row.birth_date.slice(0,4), this.guess_data.row.position]
+        this.player_data = [this.guess_data.row.name_display_first_last, this.guess_data.row.team_full, this.division, this.guess_data.row.bats, this.guess_data.row.throws, this.guess_data.row.birth_country, this.guess_data.row.birth_date.slice(0,4), this.guess_data.row.position]
         this.player_list.push(this.player_data)
-        this.check_list = [this.check_name, this.check_team, this.check_division, this.check_bat, this.check_throw, this.check_country, this.check_age, this.check_age]
+        this.check_list = [this.check_name, this.check_team, this.check_division, this.check_bat, this.check_throw, this.check_country, this.check_age, this.check_position]
         this.check_array.push(this.check_list)
         console.log(this.check_list)
 
