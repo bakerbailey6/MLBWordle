@@ -482,7 +482,7 @@ new Vue({
         if (this.correct === true){
           alert(`You Won! It took you ${this.count} guesses!`)
         }else if(this.correct === false && this.count === 9){
-          alert(`You lose!`)
+          alert(`You lose! The player was ${this.info.row.name_display_first_last}`)
         }
       },
 
