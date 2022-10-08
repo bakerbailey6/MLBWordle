@@ -80,7 +80,6 @@ new Vue({
       axios
         .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part='+ '\'' + this.player[Math.floor(Math.random() * this.player.length)] + '\'')
         .then(response => (this.info = response.data.search_player_all.queryResults))
-
     },
 
     
@@ -293,7 +292,6 @@ new Vue({
 
     methods: {
       newGuess: function(){
-        
         this.guess = this.guess  
         axios({
           method: 'get',
@@ -301,14 +299,15 @@ new Vue({
         })
         .then(
           response => {
-          this.guess_data = response.data.search_player_all.queryResults;
-          if(this.guess_data.totalSize === '1'){
-            this.show.push(this.guess)
-            this.count++}})
+            this.guess_data = response.data.search_player_all.queryResults;
+            if(this.guess_data.totalSize === '1'){
+              this.show.push(this.guess)
+              this.count++}})
         .catch(error => console.log(error))
-              
+        this.guess = "";       
       },
-      checkValues: function(){
+
+      checkValues(){
         var NL_west_str = JSON.stringify(this.league.NL.NL_west)
         var guess_nl_west = NL_west_str.includes(this.guess_data.row.team_abbrev)
         var info_nl_west = NL_west_str.includes(this.info.row.team_abbrev)
