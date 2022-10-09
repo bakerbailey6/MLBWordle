@@ -302,7 +302,8 @@ new Vue({
             if(this.guess_data.totalSize === '1'){
               this.show.push(this.guess)
               this.count++}
-              this.guess =''})
+              this.guess =''
+              this.checkValues()})
         .catch(error => console.log(error))      
       },
 

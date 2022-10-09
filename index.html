@@ -21,11 +21,11 @@
 <img src="https://logopoppin.com/wp-content/uploads/2022/02/MLB-league-division-768x317.jpeg" alt="MLB teams and divisions">
 
     <div id="app">
-            <input list ="options"type="text" placeholder="guess a player" v-model="guess" @keydown.enter="newGuess" @keyup.enter="checkValues">
+            <input list ="options"type="text" placeholder="guess a player" v-model="guess" @keydown.enter="newGuess">
             <datalist id ="options">
                 <option v-for="option in player">{{ option }}</option>
             </datalist>
-            <button @mousedown="newGuess" @mouseup="checkValues">Guess Player</button>
+            <button @mousedown="newGuess">Guess Player</button>
 
         <h3> Guess {{ count }} of 9 </h3>
 
