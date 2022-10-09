@@ -78,7 +78,8 @@ new Vue({
 
     mounted () {
       axios
-        .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part='+ '\'' + this.player[Math.floor(Math.random() * this.player.length)] + '\'')
+        .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part=\'nolan arenado\'')
+        // .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part='+ '\'' + this.player[Math.floor(Math.random() * this.player.length)] + '\'')
         .then(response => (this.info = response.data.search_player_all.queryResults))
     },
 
@@ -463,12 +464,12 @@ new Vue({
             this.check_position = 0
           }
         }else if(info_position === '3' || info_position == '5'){
-          if(guess_position === '3' || info_position === '5'){
+          if(guess_position === '3' || guess_position === '5'){
             this.check_position = 1
-          }else {
+          }else{
             this.check_position = 0
           }
-        }else {
+        }else{
           this.check_position = 0
         }
 
