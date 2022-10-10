@@ -78,8 +78,7 @@ new Vue({
 
     mounted () {
       axios
-        .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part=\'nolan arenado\'')
-        // .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part='+ '\'' + this.player[Math.floor(Math.random() * this.player.length)] + '\'')
+        .get('https://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=\'mlb\'&active_sw=\'Y\'&name_part='+ '\'' + this.player[Math.floor(Math.random() * this.player.length)] + '\'')
         .then(response => (this.info = response.data.search_player_all.queryResults))
     },
 
